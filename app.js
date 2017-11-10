@@ -1,5 +1,6 @@
 const express = require("express");
 const ejsLayout = require("express-ejs-layouts");
+const bodyParser = require("body-parser");
 
 
 const app = express();
@@ -11,6 +12,9 @@ app.set("view engine", "ejs");
 
 app.use(ejsLayout);
 app.use(express.static("public"));
+
+// the "body-parser" package creates "req.body" in our routes
+app.use(bodyParser.urlencoded({ extended: true }));
 // end SETUP ----------------------------------
 
 
@@ -43,10 +47,17 @@ app.get("/process-search", (req, res, next) => {
     else {
         res.render("search-results.ejs");
     }
-});
+}); // GET /process-search
 
 app.get("/login", (req, res, next) => {
     res.render("login-form.ejs");
+});
+
+app.post("/process-login", (req, res, next) => {
+    console.log("req.body (form body) ----------------");
+    console.log(req.body);
+    // the "body-parser" package processes the form body string
+    // and turns it into an object (req.query)
 });
 // end ROUTES ---------------------------------
 
