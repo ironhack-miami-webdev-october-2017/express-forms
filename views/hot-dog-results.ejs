@@ -1,0 +1,39 @@
+<h2> Hot Dog Results </h2>
+
+<p> You searched for <b><%= theSearchTerm %></b>.</p>
+
+     <!-- app.get(        "/process-search", ...
+               |                   |             -->
+<form method="get" action="/process-search">
+  <label for="search-input"> Search Term </label>
+  <input  id="search-input" type="search" placeholder="e.g. hot dog"
+      name="myTerm" value="<%= theSearchTerm %>" />
+  <br />
+
+  <input  id="check-input" type="checkbox" name="hotDogCheck" />
+  <label for="check-input"> Interested in hot dogs? </label>
+  <br />
+
+  <button> Search </button>
+</form>
+
+<h3> Your Results </h3>
+
+<ol>
+  <li>
+    SPONSORED
+    <a href="http://arbetterhotdogs.com"> Arbetter's </a>
+  </li>
+
+  <li>
+    SPONSORED
+    <a href="http://dogmagrill.com/"> Dogma </a>
+  </li>
+
+  <li>
+    SPONSORED
+    <a href="https://www.facebook.com/V00D00D0G/"> Voodoo Dogs </a>
+  </li>
+</ol>
+
+<img src="/images/dog.gif" />

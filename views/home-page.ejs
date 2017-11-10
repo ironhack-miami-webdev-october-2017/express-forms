@@ -1,0 +1,18 @@
+<h2> Home Page </h2>
+
+<p> We like forms. </p>
+
+     <!-- app.get(        "/process-search", ...
+               |                   |             -->
+<form method="get" action="/process-search">
+  <label for="search-input"> Search Term </label>
+  <input  id="search-input" type="search" placeholder="e.g. hot dog"
+      name="myTerm" />
+  <br />
+
+  <input  id="check-input" type="checkbox" name="hotDogCheck" />
+  <label for="check-input"> Interested in hot dogs? </label>
+  <br />
+
+  <button> Search </button>
+</form>
