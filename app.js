@@ -57,7 +57,16 @@ app.post("/process-login", (req, res, next) => {
     console.log("req.body (form body) ----------------");
     console.log(req.body);
     // the "body-parser" package processes the form body string
-    // and turns it into an object (req.query)
+    // and turns it into an object (req.body)
+
+    // if credentials are correct show "welcome-page.ejs"
+    if (req.body.myEmail === "a@a.a" && req.body.myPassword === "aaaaa") {
+        res.render("welcome-page.ejs");
+    }
+    // otherwise show "go-away.ejs"
+    else {
+        res.render("go-away.ejs");
+    }
 });
 // end ROUTES ---------------------------------
 
